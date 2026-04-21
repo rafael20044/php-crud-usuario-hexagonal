@@ -4,10 +4,10 @@ require_once __DIR__ . '/../exception/UserStatusException.php';
 
 final class UserStatusEnum{
 
-    private const ACTIVE = 'active';
-    private const INACTIVE = 'inactive';
-    private const PENDING = 'pending';
-    private const BLOCKED = 'blocked';
+    public const ACTIVE = 'active';
+    public const INACTIVE = 'inactive';
+    public const PENDING = 'pending';
+    public const BLOCKED = 'blocked';
 
     public function __construct(){}
 

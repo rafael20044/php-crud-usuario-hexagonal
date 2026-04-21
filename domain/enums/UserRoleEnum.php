@@ -4,9 +4,9 @@ require_once __DIR__ . '/../exception/UserRoleException.php';
 
 final class UserRoleEnum{
 
-    private const ADMIN = 'admin';
-    private const MEMBER = 'member';
-    private const REVIEWER = 'reviewer';
+    public const ADMIN = 'admin';
+    public const MEMBER = 'member';
+    public const REVIEWER = 'reviewer';
 
     public function __construct(){}
 
