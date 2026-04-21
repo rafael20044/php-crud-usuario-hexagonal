@@ -15,6 +15,10 @@ final class UserId{
         return $this->id;
     }
 
+    public function equals(UserId $other): bool{
+        return $this->id === $other->id;
+    }
+
     private function validateId(string $id): void{
         if (empty($id)) {
             throw UserIdException::becauseIsEmpty();
