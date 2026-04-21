@@ -1,5 +1,5 @@
 <?php
 
-final class GetAllUser{
+final class GetAllUserQuery{
     public function __construct(){}
 }

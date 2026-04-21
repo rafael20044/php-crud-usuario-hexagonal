@@ -1,6 +1,6 @@
 <?php
 
-final class GetUserById{
+final class GetUserByIdQuery{
 
     private string $id;
 
