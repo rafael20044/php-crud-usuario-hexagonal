@@ -40,14 +40,15 @@ final class UserModel{
         UserId $id,
         UserName $name,
         UserEmail $email,
-        UserPassword $password
+        UserPassword $password,
+        string $role
     ): self {
         return new self(
             $id,
             $name,
             $email,
             $password,
-            UserRoleEnum::MEMBER,
+            $role,
             UserStatusEnum::PENDING
         );
     }
