@@ -16,6 +16,15 @@ final class UserPassword{
         return $this->password;
     }
 
+    public static function fromTextPlain(string $password): self{
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        return new self($hashedPassword);
+    }
+
+    public static function match(string $password, self $passwordHash): bool{
+        return password_verify($password, $passwordHash->getPassword());
+    }
+
     private function validatePassword(string $password): void{
         if (empty($password)) {
             throw UserPasswordException::becauseIsEmpty();
