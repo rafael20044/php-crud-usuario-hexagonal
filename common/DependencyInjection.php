@@ -1,0 +1,93 @@
+<?php
+
+require_once __DIR__ . '/ClassLoader.php';
+
+final class DependencyInjection
+{
+
+    public static function boot(): void
+    {
+        ClassLoader::register();
+    }
+
+    public static function getConnection(): Connection
+    {
+        ClassLoader::loadClass('Connection');
+        return new Connection(
+            host: 'localhost',
+            port: 3306,
+            database: 'crud_usuario',
+            username: 'root',
+            password: '199rafaelxz'
+        );
+    }
+
+    public static function getPdo(): PDO
+    {
+        return self::getConnection()->createPdo();
+    }
+
+    public static function getUserPersistenceMapper(): UserPersistenceMapper
+    {
+        ClassLoader::loadClass('UserPersistenceMapper');
+        return new UserPersistenceMapper();
+    }
+
+    public static function getUserRepository(): UserRepositoryMySQL
+    {
+        ClassLoader::loadClass('UserRepositoryMySQL');
+        return new UserRepositoryMySQL(self::getPdo(), self::getUserPersistenceMapper());
+    }
+
+    public static function getCreateUserUseCase(): CreateUserUseCase
+    {
+        ClassLoader::loadClass('CreateUserService');
+        $repo = self::getUserRepository();
+        return new CreateUserService($repo, $repo);
+    }
+
+    public static function getUpdateUserUseCase(): UpdateUserUseCase
+    {
+        ClassLoader::loadClass('UpdateUserService');
+        $repo = self::getUserRepository();
+        return new UpdateUserService($repo, $repo, $repo);
+    }
+
+    public static function getDeleteUserUseCase(): DeleteUserUseCase
+    {
+        ClassLoader::loadClass('DeleteUserService');
+        $repo = self::getUserRepository();
+        return new DeleteUserService($repo, $repo);
+    }
+
+    public static function getGetUserByIdUseCase(): GetUserIdIUseCase
+    {
+        ClassLoader::loadClass('GetUserByIdService');
+        return new GetUserByIdService(self::getUserRepository());
+    }
+
+    public static function getGetAllUsersUseCase(): GetAllUserUseCase
+    {
+        ClassLoader::loadClass('GetAllUsersService');
+        return new GetAllUserService(self::getUserRepository());
+    }
+
+    public static function getUserWebMapper(): UserWebMapper
+    {
+        ClassLoader::loadClass('UserWebMapper');
+        return new UserWebMapper();
+    }
+
+    public static function getUserController(): UserController
+    {
+        ClassLoader::loadClass('UserController');
+        return new UserController(
+            self::getGetAllUsersUseCase(),
+            self::getGetUserByIdUseCase(),
+            self::getCreateUserUseCase(),
+            self::getUpdateUserUseCase(),
+            self::getDeleteUserUseCase(),
+            self::getUserWebMapper()
+        );
+    }
+}
