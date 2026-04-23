@@ -204,12 +204,13 @@ try {
             $user = $loginUseCase->execute($command);
 
             $_SESSION['auth'] = array(
-                'id' => $user->id()->value(),
-                'name' => $user->name()->value(),
-                'email' => $user->email()->value(),
-                'role' => $user->role(),
+                'id' => $user->getUserIdValue(),
+                'name' => $user->getUserNameValue(),
+                'email' => $user->getUserEmailValue(),
+                'role' => $user->getRole(),
+                'status' => $user->getStatus(),
             );
-            Flash::setSuccess('Bienvenido/a, ' . $user->name()->value() . '.');
+            Flash::setSuccess('Bienvenido/a, ' . $user->getUserNameValue() . '.');
             View::redirect('home');
             break;
 

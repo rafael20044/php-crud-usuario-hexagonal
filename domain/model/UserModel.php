@@ -86,6 +86,18 @@ final class UserModel{
         );
     }
 
+    public function updatePassword(UserPassword $newPassword): self
+    {
+        return new self(
+            $this->id,
+            $this->name,
+            $this->email,
+            $newPassword,
+            $this->role,
+            $this->status
+        );
+    }
+
     public function getUserId(): UserId {
         return $this->id;
     }

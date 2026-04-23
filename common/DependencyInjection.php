@@ -90,4 +90,10 @@ final class DependencyInjection
             self::getUserWebMapper()
         );
     }
+
+    public static function getLoginUseCase(): LoginUseCase
+    {
+        ClassLoader::loadClass('LoginService');
+        return new LoginService(self::getUserRepository());
+    }
 }
