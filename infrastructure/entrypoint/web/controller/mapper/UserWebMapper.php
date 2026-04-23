@@ -4,7 +4,7 @@ require_once __DIR__ . '/../../../../../application/service/dto/command/CreateUs
 require_once __DIR__ . '/../../../../../application/service/dto/command/UpdateUserCommand.php';
 require_once __DIR__ . '/../../../../../application/service/dto/command/DeleteUserCommand.php';
 require_once __DIR__ . '/../../../../../application/service/dto/query/GetUserByIdQuery.php';
-require_once __DIR__ . '/../../../../../application/service/dto/query/GetAllUsersQuery.php';
+require_once __DIR__ . '/../../../../../application/service/dto/query/GetAllUserQuery.php';
 
 require_once __DIR__ . '/../../../../../domain/model/UserModel.php';
 

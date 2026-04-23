@@ -112,7 +112,7 @@ try {
         case 'index':
             $controller = DependencyInjection::getUserController();
             $users = $controller->index();
-            View::render('users/list', buildListUsersViewData($users));
+            View::render('user/list', buildListUsersViewData($users));
             break;
 
         // ── Show ──────────────────────────────────────────────
