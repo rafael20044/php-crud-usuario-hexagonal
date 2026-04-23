@@ -79,7 +79,7 @@ try {
 
         // ── Create / Store ────────────────────────────────────
         case 'create':
-            View::render('users/create', buildCreateUserViewData());
+            View::render('user/create', buildCreateUserViewData());
             break;
 
         case 'store':
@@ -100,7 +100,7 @@ try {
                 $form['email'],
                 $form['password'],
                 $form['role'],
-                $form['status']
+                UserStatusEnum::PENDING
             );
             $controller->store($request);
 

@@ -6,6 +6,7 @@ require_once __DIR__ . '/../../../../../application/port/out/GetUserByEmailPort.
 require_once __DIR__ . '/../../../../../application/port/out/GetUserByIdPort.php';
 require_once __DIR__ . '/../../../../../application/port/out/SaveUserPort.php';
 require_once __DIR__ . '/../../../../../application/port/out/UpdateUserPort.php';
+require_once __DIR__ . '/../../../../../common/Uuid.php';
 
 final class UserRepositoryMysql implements
     SaveUserPort,
@@ -30,6 +31,7 @@ final class UserRepositoryMysql implements
     public function save(UserModel $user): UserModel
     {
         $dto = $this->mapper->fromModelToDto($user);
+        $uuid = Uuid::generateV4();
 
         $sql = '
             INSERT INTO users (
@@ -56,7 +58,7 @@ final class UserRepositoryMysql implements
         $stmt = $this->pdo->prepare($sql);
 
         $stmt->execute([
-            ':id' => $dto->getId(),
+            ':id' => $uuid,
             ':name' => $dto->getName(),
             ':email' => $dto->getEmail(),
             ':password' => $dto->getPassword(),
@@ -64,7 +66,7 @@ final class UserRepositoryMysql implements
             ':status' => $dto->getStatus(),
         ]);
 
-        $savedUser = $this->getUserById(new UserId($dto->getId()));
+        $savedUser = $this->getUserById(new UserId($uuid));
 
         if ($savedUser === null) {
             throw new RuntimeException('User not found after save');

@@ -9,6 +9,7 @@ class WebRoutes{
         return [
             'home' => ['method' => 'GET', 'action' => 'home'],
             'users.store' => ['method' => 'POST', 'action' => 'store'],
+            'users.create' => ['method' => 'GET', 'action' => 'create'],
             'users.index' => ['method' => 'GET', 'action' => 'index'],
             'users.show' => ['method' => 'GET', 'action' => 'show'],
             'users.update' => ['method' => 'POST', 'action' => 'update'],
