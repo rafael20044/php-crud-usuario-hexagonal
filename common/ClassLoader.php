@@ -6,18 +6,19 @@ final class ClassLoader
      * @var array<string, string>
      */
     private static array $classMap = array(
-        'InvalidUserEmailException' => 'Domain/Exceptions/InvalidUserEmailException.php',
-        'InvalidUserIdException' => 'Domain/Exceptions/InvalidUserIdException.php',
-        'InvalidUserNameException' => 'Domain/Exceptions/InvalidUserNameException.php',
-        'InvalidUserPasswordException' => 'Domain/Exceptions/InvalidUserPasswordException.php',
-        'InvalidUserRoleException' => 'Domain/Exceptions/InvalidUserRoleException.php',
-        'InvalidUserStatusException' => 'Domain/Exceptions/InvalidUserStatusException.php',
-        'UserAlreadyExistsException' => 'Domain/Exceptions/UserAlreadyExistsException.php',
+        'UserEmailException' => 'domain/exception/UserEmailException.php',
+        'UserEmailException' => 'domain/exception/UserEmailException.php',
+        'UserIdException' => 'domain/exception/UserIdException.php',
+        'UserNameException' => 'domain/exception/UserNameException.php',
+        'UserPasswordException' => 'domain/exception/UserPasswordException.php',
+        'UserRoleException' => 'domain/exception/UserRoleException.php',
+        'UserStatusException' => 'domain/exception/UserStatusException.php',
+        'UserAlreadyExistsException' => 'domain/exception/UserAlreadyExistsException.php',
 
-        'UserNotFoundException' => 'Domain/Exceptions/UserNotFoundException.php',
-        'InvalidCredentialsException' => 'Domain/Exceptions/InvalidCredentialsException.php',
+        'UserNotFoundException' => 'domain/exception/UserNotFoundException.php',
+        'InvalidCredentialsException' => 'domain/exception/InvalidCredentialsException.php',
 
-        'UserRoleEnum' => 'Domain/Enums/UserRoleEnum.php',
+        'UserRoleEnum' => 'domain/enums/UserRoleEnum.php',
         'UserStatusEnum' => 'Domain/Enums/UserStatusEnum.php',
 
         'UserId' => 'Domain/ValueObjects/UserId.php',
@@ -53,14 +54,14 @@ final class ClassLoader
         'GetUserByIdService' => 'Application/Services/GetUserByIdService.php',
         'GetAllUsersService' => 'Application/Services/GetAllUsersService.php',
         'DeleteUserService' => 'Application/Services/DeleteUserService.php',
-        'LoginService' => 'Application/Services/LoginService.php',
+        'LoginService' => 'application/service/LoginService.php',
         'UserApplicationMapper' => 'Application/Services/Mappers/UserApplicationMapper.php',
 
-        'Connection' => 'Infrastructure/Adapters/Persistence/MySQL/Config/Connection.php',
+        'Connection' => 'Infrastructure/Adapter/Persistence/MySQL/Config/Connection.php',
         'UserPersistenceDto' => 'Infrastructure/Adapters/Persistence/MySQL/Dto/UserPersistenceDto.php',
         'UserEntity' => 'Infrastructure/Adapters/Persistence/MySQL/Entity/UserEntity.php',
-        'UserPersistenceMapper' => 'Infrastructure/Adapters/Persistence/MySQL/Mapper/UserPersistenceMapper.php',
-        'UserRepositoryMySQL' => 'Infrastructure/Adapters/Persistence/MySQL/Repository/UserRepositoryMySQL.php',
+        'UserPersistenceMapper' => 'Infrastructure/Adapter/Persistence/MySQL/Mapper/UserPersistenceMapper.php',
+        'UserRepositoryMySQL' => 'Infrastructure/Adapter/Persistence/MySQL/Repository/UserRepositoryMySQL.php',
 
         'CreateUserWebRequest' => 'Infrastructure/Entrypoints/Web/Controllers/Dto/CreateUserRequest.php',
         'UpdateUserWebRequest' => 'Infrastructure/Entrypoints/Web/Controllers/Dto/UpdateUserRequest.php',

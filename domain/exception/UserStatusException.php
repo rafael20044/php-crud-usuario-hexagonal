@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . '/DomainException.php';
+require_once __DIR__ . '/UserDomainException.php';
 
-final class UserStatusException extends DomainException{
+final class UserStatusException extends UserDomainException{
 
     private const MESSAGE_STATUS_IS_EMPTY = 'El estado no puede estar vacio';
     private const MESSAGE_STATUS_IS_INVALID = 'El estado es invalido';

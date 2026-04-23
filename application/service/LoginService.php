@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../port/in/LoginUseCase.php';
 require_once __DIR__ . '/dto/command/LoginCommand.php';
+require_once __DIR__ . '/../../domain/valueObject/UserPassword.php';
 
 class LoginService implements LoginUseCase{
 

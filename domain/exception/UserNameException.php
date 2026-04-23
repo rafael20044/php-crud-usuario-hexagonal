@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . '/DomainException.php';
+require_once __DIR__ . '/UserDomainException.php';
 
-final class UserNameException extends DomainException{
+final class UserNameException extends UserDomainException{
 
     private const MESSAGE_NAME_IS_EMPTY = 'El nombre no puede estar vacio';
 

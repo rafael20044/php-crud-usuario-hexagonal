@@ -1,7 +1,7 @@
 <?php
 
 
-class DomainException extends InvalidArgumentException{
+class UserDomainException extends InvalidArgumentException{
 
     public function __construct(string $message) {
         parent::__construct($message);

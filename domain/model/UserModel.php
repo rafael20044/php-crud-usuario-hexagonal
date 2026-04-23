@@ -1,7 +1,7 @@
 <?php
 
-require_once __DIR__ . '/../valueObject/UserId.php.php';
-require_once __DIR__ . '/../valueObject/UserName.php.php';
+require_once __DIR__ . '/../valueObject/UserId.php';
+require_once __DIR__ . '/../valueObject/UserName.php';
 require_once __DIR__ . '/../valueObject/UserEmail.php';
 require_once __DIR__ . '/../valueObject/UserPassword.php';
 require_once __DIR__ . '/../enums/UserRoleEnum.php';

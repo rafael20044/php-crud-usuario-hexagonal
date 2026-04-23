@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . '/DomainException.php';
+require_once __DIR__ . '/UserDomainException.php';
 
-final class UserEmailException extends DomainException{
+final class UserEmailException extends UserDomainException{
 
     private const MESSAGE_EMAIL_IS_EMPTY = 'El correo electronico no puede estar vacio';
     private const MESSAGE_EMAIL_INVALID_FORMAT = 'El formato del correo electronico es invalido';

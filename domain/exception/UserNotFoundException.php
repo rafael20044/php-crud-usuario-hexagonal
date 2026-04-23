@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . '/DomainException.php';
+require_once __DIR__ . '/UserDomainException.php';
 
-final class UserNotFoundException extends DomainException{
+final class UserNotFoundException extends UserDomainException{
 
     private const MESSAGE_ID = "El usuario con el id %s no existe";
     private const MESSAGE_EMAIL = "El usuario con el email %s no existe";
