@@ -315,7 +315,7 @@ try {
 
 function sendPasswordRecoveryEmail(string $email, string $name, string $tempPassword): void
 {
-    $templateFile = __DIR__ . '/../Infrastructure/Entrypoints/Web/Presentation/Views/emails/forgot-password.php';
+    $templateFile = __DIR__ . '/../Infrastructure/Entrypoint/Web/Presentation/View/email/forgot-password.php';
     ob_start();
     extract(array('email' => $email, 'name' => $name, 'tempPassword' => $tempPassword), EXTR_SKIP);
     require $templateFile;
