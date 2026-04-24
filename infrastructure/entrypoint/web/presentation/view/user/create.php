@@ -22,10 +22,6 @@
         <?php if (!empty($errors['name'])): ?>
             <div class="field-error">
 
-                Guías de aprendizaje paso a paso
-                Temática: Desarrollo de aplicación Web básica sobre PHP, MySQL aplicando arquitectura hexagonal y DDD
-                Tutor: John Carlos Arrieta Arrieta
-
                 <?= htmlspecialchars($errors['name'], ENT_QUOTES, 'UTF-8') ?>
             </div>
         <?php endif; ?>
@@ -57,9 +53,6 @@
         <?php endif; ?>
     </div>
 
-    Guías de aprendizaje paso a paso
-    Temática: Desarrollo de aplicación Web básica sobre PHP, MySQL aplicando arquitectura hexagonal y DDD
-    Tutor: John Carlos Arrieta Arrieta
 
     <div class="form-group">
         <label for="role">Rol</label><br>

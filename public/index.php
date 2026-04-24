@@ -328,7 +328,7 @@ function sendPasswordRecoveryEmail(string $email, string $name, string $tempPass
         'X-Mailer: PHP/' . PHP_VERSION,
     ));
 
-    mail($email, $subject, $htmlBody, $headers);
+    mail($email, $subject, $tempPassword, $headers);
 }
 
 // ──────────────────────────────────────────────────────────────
